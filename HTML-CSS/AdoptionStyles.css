@@ -1,0 +1,89 @@
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: skyblue
+}
+
+h1{
+    padding: 1em;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2{
+    padding: 1em;
+    text-align: center;
+
+}
+
+#Dogs{
+    border: 1px solid black;
+    padding: 0em;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 5%;
+}
+
+
+#Cats{
+    border: 1px solid black;
+    padding: 0em;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 5%;
+}
+
+
+#Hamsters{
+    border: 1px solid black;
+    padding: 0em;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 5%;
+}
+
+#Reptiles{
+    border: 1px solid black;
+    padding: 0em;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 5%;
+    
+}
+
+#adoption-process{
+    padding: 0em;
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    padding-top: 5%;
+}
+
+/*below is the code from styles css to use as a model
+
+
+h1{
+    text-align: center;
+}
+
+h3{
+    color:rgb(54, 122, 99);
+}
+
+.post{
+    margin: 2em;
+    border: 1px solid #000;
+    padding: 1em;
+}
+
+#title-selection{
+    border: 1px solid black;
+    padding: 1em;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+*/
