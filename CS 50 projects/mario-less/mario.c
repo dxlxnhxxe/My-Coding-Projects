@@ -3,22 +3,27 @@
 
 int main(void)
 {
-int height, step, blank, hash;
-do
-{
-        height = get_int("height:");
-}
-while(height<1 || height>8);
-for (int step=1; step<=height; step++)
-{
-    for (int blank=1; blank<=height-step; blank++)
+    int PyramidHeight, step, blank, hash;
+    do
     {
-        printf(" ");
+        PyramidHeight = get_int("How many blocks high is the pyramid? ");
     }
-    for (int hash=height-step; hash<height; hash++)
+
+    while (!(PyramidHeight >= 1 && PyramidHeight <= 8));
+
+    if (PyramidHeight >= 1 && PyramidHeight <= 8)
     {
-        printf("#");
+        for (int step = 1; step <= PyramidHeight; step++)
+        {
+            for (int blank = 1; blank <= PyramidHeight - step; blank++)
+            {
+                printf(" ");
+            }
+            for (int hash = PyramidHeight - step; hash < PyramidHeight; hash++)
+            {
+                printf("#");
+            }
+            printf("\n");
+        }
     }
-    printf("\r\n");
-}
 }
