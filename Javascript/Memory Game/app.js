@@ -69,7 +69,8 @@ function checkMatch() {
         alert('You have clicked the same image!');
         cards[optionOneId].classList.remove('flipped');
     } else if (cardsChosen[0] === cardsChosen[1]) {
-        alert('You found a match!');
+        alert('You found the ' + cardsChosen[0] + 's !');
+
         cards[optionOneId].classList.add('matched');
         cards[optionTwoId].classList.add('matched');
         matchedAnimalNameElement.textContent = cardsChosen[0];
@@ -90,7 +91,7 @@ function checkMatch() {
     cardsChosenIds = [];
 
     if (cardsWon.length === cardArray.length / 2) {
-        resultDisplay.textContent = 'Congratulations, you identified all the cats!';
+        resultDisplay.textContent = 'Congratulations, you identified all 6 cats!';
     }
 }
 
