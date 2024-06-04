@@ -95,6 +95,4 @@ function checkMatch() {
     }
 }
 
-
-
 createBoard();
