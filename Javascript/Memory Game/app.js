@@ -1,11 +1,12 @@
+
 const cardArray = [
-    { name: 'SnowLeopard', img: 'images/SnowLeopard.jpg' },
+    { name: 'Snow Leopard', img: 'images/SnowLeopard.jpg' },
     { name: 'Tiger', img: 'images/Tiger.jpg' },
     { name: 'Cheetah', img: 'images/Cheetah.jpg' },
     { name: 'Leopard', img: 'images/Leopard.jpg' },
     { name: 'Ocelot', img: 'images/Ocelot.jpg' },
     { name: 'Jaguar', img: 'images/Jaguar.jpg' },
-    { name: 'SnowLeopard', img: 'images/SnowLeopard.jpg' },
+    { name: 'Snow Leopard', img: 'images/SnowLeopard.jpg' },
     { name: 'Tiger', img: 'images/Tiger.jpg' },
     { name: 'Cheetah', img: 'images/Cheetah.jpg' },
     { name: 'Leopard', img: 'images/Leopard.jpg' },
@@ -76,13 +77,15 @@ function checkMatch() {
             cards[optionOneId].style.visibility = 'hidden';
             cards[optionTwoId].style.visibility = 'hidden';
         }, 500);
+        
+        cardsWon.push(cardsChosen[0]);
+        resultDisplay.textContent = cardsWon.length;
     } else {
         alert('Sorry, try again');
         cards[optionOneId].classList.remove('flipped');
         cards[optionTwoId].classList.remove('flipped');
     }
 
-    resultDisplay.textContent = cardsWon.length;
     cardsChosen = [];
     cardsChosenIds = [];
 
@@ -90,6 +93,7 @@ function checkMatch() {
         resultDisplay.textContent = 'Congratulations, you identified all the cats!';
     }
 }
+
 
 
 createBoard();
