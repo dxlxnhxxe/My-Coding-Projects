@@ -1,4 +1,3 @@
-
 const cardArray = [
     { name: 'Snow Leopard', img: 'images/SnowLeopard.jpg' },
     { name: 'Tiger', img: 'images/Tiger.jpg' },
@@ -6,24 +5,36 @@ const cardArray = [
     { name: 'Leopard', img: 'images/Leopard.jpg' },
     { name: 'Ocelot', img: 'images/Ocelot.jpg' },
     { name: 'Jaguar', img: 'images/Jaguar.jpg' },
+    { name: 'Lion', img: 'images/Lion.jpg' },
+    { name: 'Lynx', img: 'images/Lynx.png' },
+    { name: 'Puma', img: 'images/Puma.jpg' },
     { name: 'Snow Leopard', img: 'images/SnowLeopard.jpg' },
     { name: 'Tiger', img: 'images/Tiger.jpg' },
     { name: 'Cheetah', img: 'images/Cheetah.jpg' },
     { name: 'Leopard', img: 'images/Leopard.jpg' },
     { name: 'Ocelot', img: 'images/Ocelot.jpg' },
     { name: 'Jaguar', img: 'images/Jaguar.jpg' },
+    { name: 'Lion', img: 'images/Lion.jpg' },
+    { name: 'Lynx', img: 'images/Lynx.png' },
+    { name: 'Puma', img: 'images/Puma.jpg' },
 ];
+
+let level = 1;
+let timer;
+let timeLeft = 60;
 
 cardArray.sort(() => 0.5 - Math.random());
 
 const gridDisplay = document.querySelector('#grid');
 const resultDisplay = document.querySelector('#result');
 const matchedAnimalNameElement = document.getElementById('matchedAnimalName');
+const timerDisplay = document.querySelector('#timer');
 let cardsChosen = [];
 let cardsChosenIds = [];
 const cardsWon = [];
 
 function createBoard() {
+    gridDisplay.innerHTML = '';
     for (let i = 0; i < cardArray.length; i++) {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -46,6 +57,35 @@ function createBoard() {
         card.addEventListener('click', selectCard);
         gridDisplay.appendChild(card);
     }
+}
+
+function startGame() {
+    createBoard();
+    startTimer();
+}
+
+function startTimer() {
+    timeLeft = 60;
+    timerDisplay.textContent = timeLeft;
+    timer = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            alert('Time is up! Game Over');
+            resetGame();
+        }
+    }, 1000);
+}
+
+function resetGame() {
+    cardsChosen = [];
+    cardsChosenIds = [];
+    cardsWon.length = 0;
+    resultDisplay.textContent = 0;
+    matchedAnimalNameElement.textContent = '';
+    createBoard();
+    startTimer();
 }
 
 function selectCard() {
@@ -78,7 +118,7 @@ function checkMatch() {
             cards[optionOneId].style.visibility = 'hidden';
             cards[optionTwoId].style.visibility = 'hidden';
         }, 500);
-        
+
         cardsWon.push(cardsChosen[0]);
         resultDisplay.textContent = cardsWon.length;
     } else {
@@ -91,8 +131,14 @@ function checkMatch() {
     cardsChosenIds = [];
 
     if (cardsWon.length === cardArray.length / 2) {
-        resultDisplay.textContent = 'Congratulations, you identified all 6 cats!';
+        clearInterval(timer);
+        alert('Congratulations, you identified all ' + (cardArray.length / 2) + ' pairs!');
+        level++;
+        cardArray.push({ name: 'NewAnimal', img: 'images/NewAnimal.jpg' }); // Add a new animal pair for the next level
+        cardArray.push({ name: 'NewAnimal', img: 'images/NewAnimal.jpg' });
+        cardArray.sort(() => 0.5 - Math.random());
+        startGame();
     }
 }
 
-createBoard();
+startGame();
