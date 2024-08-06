@@ -133,7 +133,7 @@ function checkMatch() {
         clearInterval(timer);
         alert('Congratulations, you identified all ' + shuffledNamesArray.length + ' pairs!');
         if (confirm("Congratulations! You've completed all the levels. You will be redirected to the home page.")) {
-            window.location.href = 'Introduction.html'; // Redirect to the home page
+            window.location.href = 'Introduction.html';
         }
     }
 }

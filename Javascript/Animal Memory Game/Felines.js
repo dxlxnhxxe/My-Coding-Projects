@@ -134,7 +134,7 @@ function checkMatch() {
         clearInterval(timer);
         alert('Congratulations, you identified all ' + (cardArray.length / 2) + ' pairs!');
         if (confirm("Congratulations! You've matched all the felines. Do you want to move on to the next difficulty?")) {
-            window.location.href = 'dogs.html'; // Redirect to the next difficulty (dogs)
+            window.location.href = 'dogs.html';
         }
     }
 }

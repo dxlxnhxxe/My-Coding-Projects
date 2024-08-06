@@ -90,7 +90,7 @@ function resetGame() {
     cardsChosen = [];
     cardsChosenIds = [];
     cardsWon.length = 0;
-    selectedImage = null; // Reset selected image
+    selectedImage = null;
     resultDisplay.textContent = 0;
     matchedAnimalNameElement.textContent = '';
     createBoard();
