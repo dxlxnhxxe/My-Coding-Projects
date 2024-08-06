@@ -133,11 +133,9 @@ function checkMatch() {
     if (cardsWon.length === cardArray.length / 2) {
         clearInterval(timer);
         alert('Congratulations, you identified all ' + (cardArray.length / 2) + ' pairs!');
-        level++;
-        cardArray.push({ name: 'NewAnimal', img: 'images/Felines/NewAnimal.jpg' }); // Add a new animal pair for the next level
-        cardArray.push({ name: 'NewAnimal', img: 'images/Felines/NewAnimal.jpg' });
-        cardArray.sort(() => 0.5 - Math.random());
-        startGame();
+        if (confirm("Congratulations! You've matched all the felines. Do you want to move on to the next difficulty?")) {
+            window.location.href = 'dogs.html'; // Redirect to the next difficulty (dogs)
+        }
     }
 }
 
