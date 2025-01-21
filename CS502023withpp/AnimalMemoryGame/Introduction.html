@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Matching Game Introduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .difficulty-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 1px solid #333;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s;
+        }
+        .difficulty-button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Card Matching Game!</h1>
+    <p>Test your memory by matching pairs of cards. Select your difficulty level below to start the game.</p>
+    <button class="difficulty-button" onclick="startGame('Easy')">Easy</button>
+    <button class="difficulty-button" onclick="startGame('Mediocre')">Mediocre</button>
+    <button class="difficulty-button" onclick="startGame('Hard')">Hard</button>
+
+    <div class="text-container">
+        <strong>Project Title:</strong> Card Matching Game<br>
+        <strong>Name:</strong> Dylan Haye<br>
+        <strong>GitHub:</strong> dxlxnhxxe<br>
+        <strong>edX:</strong> MotivatedMan<br>
+        <strong>City, Country:</strong> London, United Kingdom<br>
+        <strong>Date:</strong> 31/12/2024
+    </div>
+
+    <script>
+        function startGame(difficulty) {
+            if (difficulty === 'Easy') {
+                window.location.href = 'Felines.html';
+            } else if (difficulty === 'Mediocre') {
+                window.location.href = 'Dogs.html';
+            } else if (difficulty === 'Hard') {
+                window.location.href = 'Geckos.html';
+            }
+        }
+    </script>
+</body>
+</html>
