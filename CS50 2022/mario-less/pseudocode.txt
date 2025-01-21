@@ -1,4 +1,0 @@
-pour chaque marche
-    ecrire les points nbpoints=hauteur-nbmarche
-    ecrire les hash  nbhash = nbmarche
-    ecrire a la ligne
